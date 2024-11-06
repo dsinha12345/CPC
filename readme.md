@@ -1,6 +1,6 @@
 # Corneal Ulcer Grading with Mask and Classification Models
 
-This project uses a YOLOv8-based mask model and a ResNet50-based classification model to process corneal images. The `main.py` script applies the mask model to isolate the cornea and then classifies the condition's severity.
+This project uses a ResNet50-based classification model to process corneal images. The `main.py` script applies the mask model to isolate the cornea and then classifies the condition's severity.
 
 ## Table of Contents
 - [Prerequisites](#prerequisites)
@@ -22,8 +22,8 @@ This project uses a YOLOv8-based mask model and a ResNet50-based classification 
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/yourusername/yourrepository.git
-    cd yourrepository
+    git clone https://github.com/dsinha12345/Testing_model.git
+    cd Testing_model
     ```
 
 2. **Set Up the Virtual Environment**:
