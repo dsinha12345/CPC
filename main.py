@@ -106,7 +106,7 @@ def process_folder(input_folder):
             file_path = os.path.join(input_folder, filename)
             
             # Print the current image being processed
-            print(f"Processing image {idx + 1}: {filename}")
+            print(f"Processing image {idx}: {filename}")
             
             # Apply mask and classification
             masked_image = mask_images(file_path)
@@ -149,7 +149,7 @@ def create_prediction_grid(images, predictions, grid_size=(4, 4)):
         
         # Add prediction text (class label and probability)
         draw = ImageDraw.Draw(grid_image)
-        prediction_text = f"Class: {predicted_class}\nProb: {predicted_prob}"
+        prediction_text = f"Class: {predicted_class}"
         draw.text((x_offset, y_offset + img_height + 5), prediction_text, fill="black")
     
     return grid_image
