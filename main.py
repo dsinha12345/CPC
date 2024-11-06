@@ -27,16 +27,18 @@ def download_file_from_gdrive(url, output_path):
 # Download and load the mask model
 mask_model_path = 'mask_model.pth'
 classification_model_path = "best.pth"
-#download_file_from_gdrive(mask_model_url, mask_model_path)
-#download_file_from_gdrive(classification_model_url, classification_model_path)
+download_file_from_gdrive(mask_model_url, mask_model_path)
+download_file_from_gdrive(classification_model_url, classification_model_path)
 
 classification_model =models.resnet50()
-classification_model.fc = nn.Sequential(nn.Linear(classification_model.fc.in_features,1024),nn.ReLU(),nn.Dropout(0.5),nn.Linear(1024, 4))
-state_dict = torch.load(classification_model_path, map_location=device)
+#classification_model.fc = nn.Sequential(nn.Dropout(0.5),nn.Linear(classification_model.fc.in_features,1024),nn.ReLU(),nn.Dropout(0.5),nn.Linear(1024, 4))
+classification_model.fc = nn.Sequential(nn.Dropout(0.5),nn.Linear(classification_model.fc.in_features,1024),nn.ReLU(),nn.Dropout(0.5),nn.Linear(1024, 4))
+
+state_dict = torch.load(classification_model_path, map_location=device,weights_only=True)
 classification_model.load_state_dict(state_dict)
 classification_model.to(device)
 
-mask_model = torch.load(mask_model_path, map_location=device)
+mask_model = torch.load(mask_model_path, map_location=device,weights_only=False)
 mask_model.eval()
 
 
