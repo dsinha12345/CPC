@@ -18,7 +18,7 @@ This study applied AI algorithms to diagnose and grade SM-induced corneal pathol
     pip install pipenv
     ```
 
-## Installation
+## Installations
 
 1. **Clone the Repository**:
     ```bash
