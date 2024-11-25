@@ -1,4 +1,4 @@
-# Sulfur mustard-induced corneal pathology classification 
+# AEyeMG: An artificial Intelligence derived automated model for clinical grading of mustard gas keratopathy
 
 This study applied AI algorithms to diagnose and grade SM-induced corneal pathology using 401 in-house corneal images of rabbit eyes, captured with a wide beam slit lamp. Three independent clinicians classified these images into four categories: healthy, mild, moderate, and severe. Corneal segmentation and extraction were performed using Mask-RCNN, followed by classification with a CNN baseline model and advanced transfer learning algorithms, including VGG16, ResNet101, DenseNet121, InceptionV3, and ResNet50. The `main.py` script applies the Mask-RCNN to isolate the corneal part of eye and then classifies the corneal pathology using best performing ResNet50-based model for used dataset.
 
